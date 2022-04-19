@@ -1,0 +1,15 @@
+{
+    "title": "Twitter Api Client",
+    "name": "twitterapi",
+    "type": "package",
+    "class": "TwitterApi",
+    "package-type": "module",
+    "description": "Twitter Api client.",
+    "version": "1.0.1",   
+    "repository": "https://github.com/arikaim/twitter-api-module.git",
+    "require": {
+        "composer": [  
+            "arikaim/api-client-module"         
+        ]
+    }
+}

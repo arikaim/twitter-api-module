@@ -1,0 +1,19 @@
+{
+    "name": "arikaim/twitter-api-module",
+    "description": "Arikam CMS Twitter Api Module",
+    "keywords": ["Module", "Arikam CMS Twitter Api Module"],
+    "type": "arikaim-module",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {
+        "arikaim/installer": "*", 
+        "arikaim/api-client-module": "^1.0.0"      
+    },
+    "extra": {
+        "path": "twitterapi"
+    }
+}
