@@ -24,5 +24,6 @@ class TwitterApi extends Module
     public function install()
     {
         $this->installDriver('Arikaim\\Modules\\TwitterApi\\Drivers\\TwitterApiDriver');
+        $this->registerConsoleCommand('TwitterAccountInfo');
     }
 }
