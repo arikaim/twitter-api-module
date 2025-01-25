@@ -11,7 +11,7 @@
     }],
     "require": {
         "arikaim/installer": "*", 
-        "arikaim/abraham/twitteroauth": "^7.0.0"      
+        "abraham/twitteroauth": "^7.0.0"      
     },
     "extra": {
         "path": "twitterapi"
