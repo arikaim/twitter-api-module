@@ -63,7 +63,7 @@ class TwitterApiDriver extends AbstractApiClient implements DriverInterface, Api
      */
     public function __construct()
     {
-        $this->setDriverParams('twitter','api','Twitter Api','Twitter Api driver');      
+        $this->setDriverParams('twitter-api','api','Twitter Api','Twitter Api driver');      
     }
 
     /**
@@ -93,7 +93,8 @@ class TwitterApiDriver extends AbstractApiClient implements DriverInterface, Api
         $url = $params['base_url'] . $params['url_path'];
         $method = $params['method'] ?? null;
         $apiData = $params['params'] ?? [];
-       
+        $postFields = $params['post_fields'] ?? [];
+        
         if (empty($url) == true || empty($method) == true) {
             throw new Exception('Not vlaid request url or method.', 1);    
             return null;     
@@ -109,6 +110,8 @@ class TwitterApiDriver extends AbstractApiClient implements DriverInterface, Api
         ];
         ksort($keys);
         $dataFields = \array_merge($keys,$apiData);  
+        $dataFields = \array_merge($dataFields,$postFields);  
+
         $keys['oauth_signature'] = $this->createSignature($url,$method,$dataFields);
 
         foreach($keys as $key => $value) {
@@ -148,7 +151,7 @@ class TwitterApiDriver extends AbstractApiClient implements DriverInterface, Api
     */
     public function getErrorFieldName(): ?string
     {
-        return 'error';
+        return 'errors';
     }
 
     /**
@@ -170,7 +173,7 @@ class TwitterApiDriver extends AbstractApiClient implements DriverInterface, Api
      * Create driver config properties array
      *
      * @param Arikaim\Core\Collection\Properties $properties
-     * @return array
+     * @return void
      */
     public function createDriverConfig($properties)
     {

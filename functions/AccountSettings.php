@@ -29,4 +29,15 @@ class AccountSettings extends AbstractApiFunction implements ApiFunctionInterfac
             ->path('account/settings.json')
             ->paramsType('query');    
     }
+
+    /**
+     * Init properties descriptor
+     *
+     * @return void
+     */
+    protected function initDescriptor(): void
+    {
+        $this->descriptor()->set('title','Accounts settings');
+        $this->descriptor()->set('description','Get account settings');
+    }
 }
